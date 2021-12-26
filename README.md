@@ -3,4 +3,5 @@
 
 Essa aplicação esta sendo desenvolvida com o intuito de aprender e melhorar os conceitos de desenvolvimento de microsserviços, utilizando spring boot e kubernets, aplicando tambem design patters (no caso, utilizado até o momento o Builder pattern), será adicionado tambem testes e cache.
 
+A aplicacao é formada por 3 microsserviços, user-api, product-api e shopping-api
 =)
