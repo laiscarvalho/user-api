@@ -2,6 +2,7 @@ package com.laiscarvalho.userapi.repository;
 
 import com.laiscarvalho.userapi.dto.UserDto;
 import lombok.Data;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
