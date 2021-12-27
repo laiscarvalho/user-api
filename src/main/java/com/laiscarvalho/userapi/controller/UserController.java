@@ -2,6 +2,7 @@ package com.laiscarvalho.userapi.controller;
 
 import com.laiscarvalho.userapi.dto.UserDto;
 import com.laiscarvalho.userapi.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
@@ -13,7 +14,7 @@ import java.util.List;
 
 @RestController
 public class UserController {
-
+    @Autowired
     private UserService userService;
 
 

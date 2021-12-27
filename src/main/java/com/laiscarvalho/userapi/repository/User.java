@@ -27,6 +27,8 @@ public class User {
 
     private LocalDateTime registerDate;
 
+    private String email;
+
     public static class Builder {
 
         private String name = "";
@@ -36,6 +38,8 @@ public class User {
         private String address = "";
 
         private String phone = "";
+
+        private String email = "";
 
         private LocalDateTime registerDate = LocalDateTime.now();
 
@@ -64,6 +68,11 @@ public class User {
             return this;
         }
 
+        public Builder email(String email) {
+            this.email = email;
+            return this;
+        }
+
         public User build() {
             return new User(this);
         }
@@ -75,6 +84,7 @@ public class User {
         address = builder.address;
         phone = builder.phone;
         registerDate = builder.registerDate;
+        email = builder.email;
     }
 
 
@@ -84,7 +94,8 @@ public class User {
                 .cpf(userDto.getCpf())
                 .address(userDto.getAddress())
                 .phone(userDto.getPhone())
-                .registerDate(userDto.getRegisterDate())
+                .registerDate(LocalDateTime.now())
+                .email(userDto.getEmail())
                 .build();
 
         return user;

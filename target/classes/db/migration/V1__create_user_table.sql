@@ -1,4 +1,4 @@
-create schema if not exists user;
+create schema if not exists users;
 
 create table  users.user(
     id bigserial primary key,
@@ -7,5 +7,5 @@ create table  users.user(
     address varchar(100) not null,
     email varchar(100) not null,
     phone varchar(100) not null,
-    registerDate varchar(100) not null
+    register_date varchar(100) not null
 );

@@ -1,11 +1,14 @@
 package com.laiscarvalho.userapi.dto;
 
 import com.laiscarvalho.userapi.repository.User;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserDto {
     private String name;
 
@@ -16,6 +19,8 @@ public class UserDto {
     private String phone;
 
     private LocalDateTime registerDate;
+
+    private String email;
 
     public static class Builder {
 
@@ -28,6 +33,8 @@ public class UserDto {
         private String phone = "";
 
         private LocalDateTime registerDate = LocalDateTime.now();
+
+        private String email = "";
 
         public Builder name(String name) {
             this.name = name;
@@ -54,6 +61,11 @@ public class UserDto {
             return this;
         }
 
+        public Builder email(String email){
+            this.email= email;
+            return this;
+        }
+
         public UserDto build() {
             return new UserDto(this);
         }
@@ -65,6 +77,7 @@ public class UserDto {
         address = builder.address;
         phone = builder.phone;
         registerDate = builder.registerDate;
+        email = builder.email;
     }
 
     public static UserDto convertToUserDto(User user) {
@@ -73,7 +86,8 @@ public class UserDto {
                 .cpf(user.getCpf())
                 .address(user.getAddress())
                 .phone(user.getPhone())
-                .registerDate(user.getRegisterDate())
+                .registerDate(LocalDateTime.now())
+                .email(user.getEmail())
                 .build();
         return userDto;
     }
